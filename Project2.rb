@@ -31,36 +31,35 @@
 # Question 2
 
 # book = {title, [cahpeter1, chapter2, chapter3]}
-{:title=>["My Awesome Chapter 1", "My Awesome Chapter 2"], :title=>"My Awesome Book",
-:chapters0=>["My Awesome Chapter 5", "My Awesome Chapter 5"], :title0=>"My Awesome Book 2"}
 
-class Book
-  attr_accessor :title
-  attr_accessor :chapters
-
-  def initialize()
-    @book = {}
-    @book[:chapters] = []
-  end
-
-  def add_chapter(chapter)
-    @book[:title] = title
-    @book[:chapters] << chapter
-  end
-
-  def chapters
-    chapter_count = @book[:chapters].count
-    puts "Your book: #{title} has #{chapter_count} chapters"
-  end
-
-end
-
-
-book = Book.new
-book.title = "My Awesome Book"
-book.add_chapter("My Awesome Chapter 1")
-book.add_chapter("My Awesome Chapter 2")
-book.chapters
+#
+# class Book
+#   attr_accessor :title
+#   attr_accessor :chapters
+#
+#   def initialize()
+#     @book = {}
+#     @book[:chapters] = []
+#   end
+#
+#   def add_chapter(chapter)
+#     @book[:title] = title
+#     @book[:chapters] << chapter
+#   end
+#
+#   def chapters
+#     chapter_count = @book[:chapters].count
+#     puts "Your book: #{title} has #{chapter_count} chapters"
+#   end
+#
+# end
+#
+#
+# book = Book.new
+# book.title = "My Awesome Book"
+# book.add_chapter("My Awesome Chapter 1")
+# book.add_chapter("My Awesome Chapter 2")
+# book.chapters
 
 # Your book: My Awesome Book has 2 chapters:
 # 1. My Awesome Chapter 1
@@ -96,15 +95,11 @@ book.chapters
 # Question 4
 major_cities = {BC: ["Vancouver", "Victoria", "Prince George"], AB: ["Edmonton", "Calgary"]}
 
-# major_cities.each do |k,v|
-#   puts "#{key} has 3 main cities:#{value}"
-# end
-
 major_cities.each do |key, value|
 
-  value.each do |v|
-    # i < value.length
 
-    puts "#{key} has #{i} main cities: #{value.join(", ")}"
-  end
+    value.count
+
+    puts "#{key} has #{value.count} main cities: #{value[0..-2].join(", ") + " and " + value[-1]}"
+
 end
